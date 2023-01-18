@@ -1,0 +1,44 @@
+Tehtävä 2 
+Tehtävän tarkoituksena oli luoda rutiinit printBoard sekä createInitialBoard, jotka luo shakkilaudan alkutilanteessa sekä tulostaa sen visuaalisessa muodossa.
+Päädyin valitsemaan laudan tyypiksi Character[][] kaksiulotteisen matriisin ja tämän ehtona on, että sen dimensiot ovat 10x10. Tein ChessPiece luokan charactereista listan, jotta shakin pelinappulat saadaan helpommin asetettua ohjelmassa "laudalle". 
+Ohjelma käy läpi rivi ja sarake kerrallaan laudan ja asettaa Board :iin asianmukaiset merkit pelin alkutilanteessa.
+Itsessään väärän syötteen asettaminen ei ole mahdollista (tämän vuoksi alkuehto = true) sillä syöte on jo ennaltaan määritelty ja tulostuu aina saman näköisenä kutsuttaessa rutiinia.
+Tulostusrutiinissa ohjelman syötteenä on ennalta muodostettu lauta ja tämän alkuehtona on, että lauta on Character[][] 10x10 tyyppinen lauta. Rutiini tulostaa merkki kerrallaan laudan.
+
+Tehtävä 3 a)
+Toteutuksen alkutilassa operaatioita (true=x,false=o,null=.) ei ole määritelty toteutettavaksi
+sekä toteutuksessa ei ole huomiotu laudan suuruutta (3x3 tulisi olla aina).
+
+Lisäsin rutiiniin alkuun ehdon, joka tarkistaa, että lauta on 3x3 ja tulostaa tekstin "Lauta on suurempi /pienempi kuin 3x3 jos lauta ei vastaa ehtoja.
+Jos ehdot täsmää, käy rutiini läpi rivi kerrallaan syötteen arvot, muuttaa ne toteutuksen mukaiseksi ja tulostaa sen
+ ja jokaisen rivin päätteeksi siirtyy seuraavaan riviin.
+Rutiinin testaamiseksi loin Boolean-tyyppisen 3x3 taulun vastaamaan tehtävänannon pelitilannetta.
+
+
+Tehtävä 3 b)
+
+Toteutuksessa ei ole huomioitu päivän tai kuukauden kohdalla negatiivisia 
+lukuja (esim Age.printAge(-21,9,2021) tulostaa iäksi 1kk 12 pvä, eli ts. 42 päivää.
+Toteutus ei myöskään ilmoita virheestä jos päivän kohdalle laitetaan yli 30
+ja siirtää ylimääräiset päivät (30pvästä lähtien) seuraavaan kuuhun
+
+Toteutuksessa kuukaudet ovat 30 päiväisiä, eli todellisuudessa laskettu ikä on vain keskiarvo
+Tämä ei ota huomioon esimerkiksi karkausvuosia
+
+Toteutus sallii myös asetettavaksi päivän kohdalle 0, joka gregoriaanisen kalenterin mukaan ei ole mahdollista
+(mutta toisaalta tulkitsee sen samana kuin edellisen kuun 30 päivän).
+
+Jotta rutiini vastaisi määrittelyjä, asetin alkuehdoiksi, että syötteet eivät saa olla null- arvoisia tai negatiivisia
+
+Tehtävä 4 
+
+a)	Määrittelyn mukaan syöte ei saa olla null-tyyppinen
+b)	Epäkelpo syöte  ei palauta mitään, tai jos syötettä ei ole olemassa rutiini ei palauta mitään
+c)	FORALL(e: input; EXISTS(re: RESULT; re ==e)) &&
+^jokaista syötteen arvoa kohtaan e on vastaava ulostulon arvo re, joka täsmää (re==e)
+
+FORALL(i: 0 <= i < RESULT.length;
+
+Jos muuttuja i on 0 ja ulostulon välillä niin -> FORALL(j: i < j < RESULT.length; RESULT[i] < RESULT[j]))
+Eli iteroidaan muuttujalla j arvoja jos se on i:n ja RESULTIN pituuden välillä, niin RESULT[i] on pienempi kuin RESULT[j]
+

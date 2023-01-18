@@ -1,0 +1,45 @@
+Lämpötilan yksikkö: Tietueluokka
+- Tietueluokkaan voidaan antaa lämpötilayksikkö, sekä lämpötila erillisinä muuttujina.
+- Arvosemantiikka tietueluokassa mahdollistaa lämpötilojen vertailun
+- Java14 record-rakenne voi paremmin erotella lämpötilan aroja, kuin tavallinen luokka.
+- Toisaalta voitaisiin myös käyttää jollain tavalla lämpötilan määrää erillisenä ja yksikköä sisäluokkina, mutta tämä olisi turhan monimutkaista ottaen huomioon mitä haetaan.
+
+Ohjelmointikielen syntaktinen rakenne: Rajapintaluokka
+- Jokaiselle metodille tehdään oma luokka, ja rajapintaluokka kerää ne yhteen
+- Toteuttaa kokonaisuutta yhdistämällä metodiluokat.
+- Rajapintaluokat ovat tavallista luokkaa parempia, sillä ne voidaan helpommin integroida kokonaisuuteen tarvittaessa
+
+Parittomuuspredikaattilauseke: Tavallinen luokka
+- Voidaan mallintaa tavallisessa luokassa. Luokka palauttaa tiedon anetun luvun parillisuudesta
+- Rajapintaluokkaa voitaisiin käyttää myös, jos tarvitaan parillisuuspredikaattilauseketta jonkun muun luokan sisällä,
+mutta se on turhan monimutkainen yksinkertaisen laskutoimituksen tekemiseen. Tavallinen luokka toimii sopivan helposti.
+
+Hiiren painike: Literaaliluokka
+- Luodaan instanssit jotka ovat muuttumattomia. (esim. vasen ja oikea painike)
+- Voisi olla myös tavallinen luokka, jossa asetetaan tietyt painikkeet muuttujiksi ja niiden tekemät tapahtumat määritetään luokan sisällä.
+Literaaliluokka toimii tosin paremmin, sillä painikkeet hiiressä eivät muutu fyysisiltä paikoiltaan mihinkään.
+
+Väliaikainen nimetty aputiedosto: Esiintymäkohtainen sisäluokka tai nimetön luokka
+- Luodaan vain käytön ajaksi, nimetön on kertakäyttöinen tai esiintymäkohtainen on olemassa vain kun ulkoluokan instanssi on.
+- Esiintymäkohtainen voisi olla sopiva vaihtoehto, jos pitää tietää milloin esiintymäkohtainen sisäluokka luodaan ja jos luokan aktivoituminen on kiinni ulkoluokasta
+- Nimetön luokka on yksinkertaisempi, ja se luo väliaikaisen luokan vain käytön ajaksi.
+
+Linkitetty lista: tietueluokka
+- Data on muuttumatonta, joten sieltä ei voi poistaa mitään.
+- Tietueluokka mahdollistaa linkitetyn listan sisältämän datan vertailun vastaaviin instansseihin.
+- Voisi olla myös literaaliluokka, jossa määritetään linkitetyn listan instanssit luokkaa määritettäessä.
+
+(Nimi, Ikä, Osoite, Email, Koulutustaso) tietoviisikko: Staattinen sisäluokka
+- Voi käyttää myös tavallista luokkaa, mutta ->
+- Staattinen sisäluokka erottaa samat tiedot, antaa uuden "vastauksen" joka kyselyyn, joten saman kyselyn eri vastaukset voidaan pitää helpommin erillään.
+- Esiintymäkohtainen sisäluokkakin on mahdollinen.
+
+Ohjelmointikielen syntaktiset rakenteet: Rajapintaluokka
+- Voidaan määrittää tapauskohtaisesti toimimaan halutulla tavalla.
+- Literaaliluokka voisi toteuttaa käskyt rajapinnan sisällä.
+- Tavalliset luokat eivät välttämättä taivu tarpeeksi haluttuun toiminnallisuuteen, joten siksi rajapintaluokka toimisi paremmin.
+
+
+Oletetaan, että meillä on valmiina luokat: Esiintymäkohtainen sisäluokka/rajapintaluokka
+- Esiintymäkohtainen sisäluokka voisi olla sopiva, sillä TyyliteltyTulostin tarvitsee tulostimen toimiakseen. Tulostin tässä siis ulkoluokkana.
+- Rajapintaa käyttämällä voitaisiin asettaa ehdot TyyliteltyTulostin-luokan toiminnalle käyttämällä luokkia Tulostin ja TulostusTyyli.

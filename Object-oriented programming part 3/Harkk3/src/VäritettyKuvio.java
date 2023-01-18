@@ -1,0 +1,1 @@
+record VäritettyKuvio(Kuvio k, Väri v) {}
